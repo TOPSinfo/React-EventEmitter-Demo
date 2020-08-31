@@ -10,13 +10,13 @@ class Temprature extends React.Component {
             this.timeCount += 1;
             if (this.timeCount === 10) {
                 this.timeCount = 1;
-                this.setState({temprature: 'N/A'})
+                this.setState({ temprature: 'N/A' })
             }
         }, 100)
-        
+
         Emitter.on('INPUT_FROM_TEMPRATURE', (newValue) => {
-                this.timeCount = 1;
-                this.setState({ temprature: `${newValue.temprature}℃` })
+            this.timeCount = 1;
+            this.setState({ temprature: `${newValue.temprature}℃` })
         });
     }
 
@@ -28,7 +28,7 @@ class Temprature extends React.Component {
         return (
             <div className="temprature">
                 <h1>Temprature</h1>
-                <h3>{this.state.temprature}</h3>
+                <h3 className="temprature-text" data-testid="temprature-text">{this.state.temprature}</h3>
             </div>
         )
     }

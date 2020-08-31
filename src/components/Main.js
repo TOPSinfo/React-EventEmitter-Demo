@@ -7,16 +7,16 @@ import Humidity from './Humidity';
 
 class Main extends React.Component {
     state = {
-        displayObject : {
+        displayObject: {
             temprature: '',
             airPressure: '',
             humidity: ''
         },
-     };
+    };
 
 
-     tempEmit = () => {
-        var rand = (Math.floor(Math.random() * 20) + 1)*100 
+    tempEmit = () => {
+        var rand = (Math.floor(Math.random() * 20) + 1) * 100
         this.setState({
             displayObject: {
                 ...this.state.displayObject,
@@ -29,7 +29,7 @@ class Main extends React.Component {
     }
 
     airPressureEmit = () => {
-        var rand = (Math.floor(Math.random() * 20) + 1)*100 
+        var rand = (Math.floor(Math.random() * 20) + 1) * 100
         this.setState({
             displayObject: {
                 ...this.state.displayObject,
@@ -42,7 +42,7 @@ class Main extends React.Component {
     }
 
     humidityEmit = () => {
-        var rand = (Math.floor(Math.random() * 20) + 1)*100
+        var rand = (Math.floor(Math.random() * 20) + 1) * 100
         this.setState({
             displayObject: {
                 ...this.state.displayObject,
@@ -59,7 +59,7 @@ class Main extends React.Component {
         this.airPressureEmit();
         this.humidityEmit();
     }
-    
+
     render() {
         return (
             <div>
@@ -73,21 +73,21 @@ class Main extends React.Component {
                             <td></td>
                         </tr>
                         <tr>
-                        <td>
-                            <Temprature />
-                        </td>
-                        <td>
-                            <AirPressure />
-                        </td>
-                        <td>
-                            <Humidity />
-                        </td>
-                    </tr>
+                            <td>
+                                <Temprature />
+                            </td>
+                            <td>
+                                <AirPressure />
+                            </td>
+                            <td>
+                                <Humidity />
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         )
-    } 
+    }
 }
 
 export default Main
