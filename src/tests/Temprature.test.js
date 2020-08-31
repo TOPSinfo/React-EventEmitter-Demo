@@ -2,7 +2,7 @@ import React from 'react';
 import Enzyme, { shallow } from "enzyme";
 import Adapter from 'enzyme-adapter-react-16';
 import Emitter from '../services/emitter';
-import Temprature from './Temprature'
+import Temprature from '../components/Temprature'
 
 Enzyme.configure({ adapter: new Adapter() })
 
