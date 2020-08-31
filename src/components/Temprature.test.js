@@ -14,7 +14,7 @@ describe('setInterval fn', () => {
 
 
         Emitter.on('INPUT_FROM_TEMPRATURE', (newValue) => {
-            expect(tempWrapper.state("temprature")).toEqual(`${newValue.temprature}`);
+            expect(tempWrapper.state("temprature")).toEqual(`${newValue.temprature}℃`);
         });
 
     });

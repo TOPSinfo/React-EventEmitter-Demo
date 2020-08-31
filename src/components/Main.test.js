@@ -4,12 +4,16 @@ import Adapter from 'enzyme-adapter-react-16';
 // import ReactDOM from 'react-dom';
 import Emitter from '../services/emitter';
 import Main from './Main';
+import Temprature from './Temprature'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 describe('setInterval fn', () => {
     it('set interval and emitter for temprature', () => {
         const wrapper = shallow(<Main />);
+        const tempWrapper = shallow(<Temprature />)
+        expect(tempWrapper.state("temprature")).toEqual('N/A');
+
 
         jest.useFakeTimers();
 
@@ -29,6 +33,8 @@ describe('setInterval fn', () => {
         Emitter.emit('INPUT_FROM_TEMPRATURE', displayObject)
         Emitter.emit('INPUT_FROM_AIR_PRESSURE', displayObject)
         Emitter.emit('INPUT_FROM_HUMIDITY', displayObject)
+
+        expect(tempWrapper.state("temprature")).toEqual(`${randomNum}℃`);
 
         jest.useRealTimers();
     });
